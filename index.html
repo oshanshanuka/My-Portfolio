@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: black;
+        }
+        header {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+      }
+      .logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-right: 16px;
+      }
+
+      .nav-links li a {
+        color: red;
+        text-decoration: underline;
+      } 
+      #home img{
+        border: 5px solid;
+        border-color: white;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        float: right;
+        margin-top: 5px;
+        margin-right: 100px;
+      }
+      #home h2 {
+        margin-top: 130px;
+        text-align: center;
+        color: white;
+      }
+      #home span {
+        text-align: center;
+        font-size: 50px;
+        display: grid;
+        justify-content: center;
+      }
+      #home p{
+        text-align: center;
+        color: white;
+        font-size: 20px;
+      }
+      #about{
+        margin-top: 250px;
+      }
+      #about .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 30px;
+      }
+      #about .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+      #about img{
+        border-radius: 5px;
+        width: 350px;
+        height: 400px;
+        float: left;
+        margin: 30px;
+      }
+      #about .paragraph1{
+        margin-top: 50px;
+        color: white;
+        font-size: 35px;
+      }
+      #about .paragraph2{
+        margin-top: 50px;
+        color: white;
+        font-size: 35px;
+      }
+
+      #projects{
+        margin-top: 220px;
+      }
+      #projects .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 30px;
+      }
+      #projects .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+      .container1{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-top: 20px;
+        margin-left: 30px;
+      }
+      #projects .card{
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: #333;
+        width: 350px;
+        height: 450px;
+        transition: background-color 0s ease-in-out 1s;
+      }
+      #projects .card:hover{
+        background-color: darkgrey;
+        transition: background-color 1s ease-in 1s;
+      }
+      .box img{
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        margin-top: 40px;
+        margin-left: 100px;
+      }
+      #projects .card p{
+        font-size: 30px;
+        color: yellow;
+        text-align: center;
+      }
+      #projects .card .btn{
+        margin-left: 70px;
+        border: 1px solid;
+        width: 200px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: red;
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      #experience{
+        margin-top: 150px;
+      }
+      #experience .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 30px;
+      }
+      #experience .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+
+      .container2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+      }
+      #experience .exp{
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 600px;
+        height: 400px;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+      }
+
+      #experience .exp p{
+        padding-left: 25px;
+        font-size: 30px;
+        color: white;
+      }
+      .image3 img{
+        margin-left: 30px;
+        margin-top: 20px;
+        border: 1px solid;
+        border-radius: 7px;
+        height: 420px;
+        width: 600px;
+      }
+
+      #skills{
+        margin-top: 100px;
+      }
+      #skills .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 20px;
+      }
+      #skills .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+      #skills .container3{
+        margin-top: 30px;
+        margin-left: 10px;
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: repeat(4,1fr);
+      }
+      .box2{
+        margin-left: 20px;
+        border: 1px solid;
+        border-radius: 10px;
+        width: 240px;
+        height: 290px;
+        background-color: #333;
+        box-shadow: 1px 1px 1px 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+        transition: width 1s ease;
+      }
+      .box2 img{
+        width: 220px;
+        height: 270px;
+        padding: 10px;
+      }
+      .box:hover{
+        width: 300px;
+      }
+      .box:hover img{
+        width: 190px;
+        height: 240px;
+      }
+      .box:hover p{
+        opacity: 1;
+      }
+      .box p{
+        opacity: 0;
+      }
+
+      #gallery{
+        margin-top: 100px;
+      }
+      #gallery .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 20px;
+      }
+      #gallery .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+      h1{
+        font-size: 35px;
+        text-align: center;
+        color: white;
+      }
+      .container4{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .card1{
+        width: 450px;
+        height: 450px;
+        border: 1px solid;
+        border-radius: 8px;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: width 1s ease;
+      }
+      .card1 img{
+        width: 440px;
+        height: 440px;
+        padding: 20px;
+      }
+      .card1:hover .text{
+        opacity: 1;
+      }
+      .text{
+        opacity: 0;
+      }
+      .card1:hover{
+        width: 490px;
+      }
+      .card1:hover img{
+        width: 400px;
+        height: 450px;
+      }
+      #contact{
+        margin-top: 100px;
+      }
+      #contact .sentence1{
+        color: white;
+        font-size: 70px;
+        margin-left: 20px;
+      }
+      #contact .sentence2{
+        color: red;
+        font-size: 70px;
+        margin-left: 5px;
+      }
+      .container5{
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2,
+      p {
+        text-align: center;
+      }
+      label {
+        display: block;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: green;
+        color: white;
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+      }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img class="logo" src="/assets/image/WhatsApp Image 2024-10-21 at 22.49.09.jpeg" alt="logo" />
+          <h2>Oshan Shanuka</h2>
+        </div>
+        <nav>
+            <ul class="nav-links">
+               <li><a href="#home">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#projects">My Projects</a></li>
+               <li><a href="#experience">Experience</a></li>
+               <li><a href="#skills">Skills</a></li>
+               <li><a href="#gallery">Gallery</a></li>
+               <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <img src="/assets/image/WhatsApp Image 2024-10-21 at 22.49.09.jpeg" alt="my image1">
+        <h2>Hey It's me</h2>
+        <span style="color: white;">I'm</span>
+        <span style="color: red;">Oshan</span>
+        <p>I'm professional Software Engineer in Sri lanka</p>
+    </section>
+
+    <section id="about">
+        <span class="sentence1">About</span>
+        <span class="sentence2">Me</span>
+        <span class="sentence1">..</span>
+        <div>
+            <img src="/assets/image/WhatsApp Image 2024-10-21 at 22.49.40.jpeg" alt="myimage2">
+        </div>
+        <div class="paragraph1">
+            I'm Oshan shanuka.I'm 22 years old.I started m career as a Software Engineer in 2023.
+            Over the years, i have dedicated my self to designing,programming,web developing and 
+            managing web sites.  
+        </div>
+        <div class="paragraph2">
+          I was educated in St.Servatius' College Matara.As well also i doing my further education 
+          in Institute of Software Engineering. 
+        </div>
+    </section>
+
+    <section id="projects">
+      <span class="sentence1">My</span>
+      <span class="sentence2">Projects</span>
+      <span class="sentence1">..</span>
+      <div class="container1">
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.16.09.jpeg" alt="">
+              <p>Mirissa Whale Watching Management system</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.16.10 (1).jpeg" alt="">
+              <p>Students Management system</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.16.10.jpeg" alt="">
+              <p>Connect Four Game</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.16.11 (1).jpeg" alt="">
+              <p>Kitkat Site(demo)</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.16.11.jpeg" alt="">
+              <p>Chat Application</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.18.22 (1).jpeg" alt="">
+              <p>Hibernate ORM</p>
+              <button class="btn">Read More</button>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <span class="sentence1">My</span>
+      <span class="sentence2">Experience</span>
+      <span class="sentence1">..</span>
+      <div class="container2">
+        <div class="exp">
+          <p>Intern Software Enginner at <span style="color: red;">Capital Maharaja pvt(ltd)</span></p>
+          <p>Former Senior Graphic Designer at <span style="color: red;">Fauget Agency</span> in 2023.</p>
+          <p>Former Web Developer at <span style="color: red;">Ceyentra Technologies</span> in 2023.</p>
+          <p>Graduate as a Web Developer at <span style="color: red;">Oracle.</span></p>
+        </div>
+        <div class="image3">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 12.18.22 (2).jpeg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <span class="sentence1">My</span>
+      <span class="sentence2">Skills</span>
+      <span class="sentence1">..</span>
+      <div class="container3">
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.44 (1).jpeg" alt="powerbilogo">
+          <p>Power BI</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.43 (1).jpeg" alt="mysql logo">
+          <p>MySQL</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.44 (2).jpeg" alt="figma logo">
+          <p>Figma</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.43.jpeg" alt="intellij logo">
+          <p>Intellij Idea</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.44.jpeg" alt="vscode logo">
+          <p>VS Code</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.45 (1).jpeg" alt="java logo">
+          <p>Java</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.45.jpeg" alt="dbeaver logo">
+          <p>DBeaver</p>
+        </div>
+        <div class="box2">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 13.33.47.jpeg" alt="scene builder logo">
+          <p>Scene Bilder</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <span class="sentence2">Gallery</span>
+      <span class="sentence1">..</span>
+      <h1>Some <span style="color: red;">Archievements</span> in my life</h1>
+      <div class="container4">
+        <div class="card1">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 19.53.50.jpeg" alt="">
+          <p class="text" style="color: white;font-size: 30px;">Innovesta 24'</p>
+        </div>
+        <div class="card1">
+          <img src="/assets/image/WhatsApp Image 2024-10-22 at 20.02.05.jpeg" alt="">
+          <p class="text" style="color: white; font-size: 30px;">Innovesta 24'</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <span class="sentence1">Contact</span>
+      <span class="sentence2">Me</span>
+      <span class="sentence1">..</span>
+      <div class="container5">
+        <h2>Contact Us</h2>
+        <p>If you need any help, please let us know...!!!</p>
+        <form action="">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+  
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" cols="50" rows="4"></textarea>
+  
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+
+      <footer>
+        <h1 style="color: white;text-align: center;">Follow me on these platforms</h1>
+        <div class="icons">
+          <a href="https://www.facebook.com/share/84NjY84zEa7xtMGy/?mibextid=qi2Omg"><img src="/assets/image/Facebook (1).jpg" alt="fb logo" style="width: 100px;height: 100px;"></a>
+          <a href="https://www.instagram.com/__shanuka19__/profilecard/?igsh=djl5aHEzNDZwNGw3"><img src="/assets/image/instagram app icon (1).jpg" alt="twitter logo" style="width: 100px;height: 100px;"></a>
+          <a href="https://github.com/oshanshanuka"><img src="/assets/image/Primer.jpg" alt="github logo" style="width: 100px;height: 100px;"></a>
+          <a href="https://www.linkedin.com/in/oshan-shanuka-4947b928b/"><img src="/assets/image/Linkedin icons for free download _ Freepik.jpg" alt="linkedin logo" style="width: 100px;height: 100px;"></a>
+          <a href="https://wa.me/qr/BTJ6AZXRMO23B1"><img src="/assets/image/518934e3-090d-4d35-9841-60ac6c15c247.jpg" alt="twitter logo" style="width: 100px;height: 100px;"></a>
+          <a href="oshanshanuka428@gmail.com`"><img src="/assets/" alt="gmail logo" style="width: 100px;height: 100px;"></a>
+      </footer>
+    </section>
+</body>
+</html>
