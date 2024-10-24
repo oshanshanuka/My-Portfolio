@@ -16,6 +16,11 @@
         justify-content: space-between;
         align-items: center;
         padding: 12px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
       }
       .logo {
         width: 32px;
@@ -40,6 +45,9 @@
         color: red;
         text-decoration: underline;
       } 
+      #home{
+        margin-top: 250px;
+      }
       #home img{
         border: 5px solid;
         border-color: white;
@@ -356,7 +364,153 @@
         border: none;
       }
 
-
+      @media screen and (max-width:425px) {
+        .nav-links {
+          display: none;
+        }
+        .logo-container > h2 {
+          display: none;
+        }
+        #burger {
+          display: block;
+        }
+        .menu-panel .active{
+          right: 0;
+        }
+        #home{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #home .sentence1{
+          font-size: 50px;
+        }
+        #home .sentence2{
+          font-size: 50px;
+        }
+        #home .sentence3{
+          font-size: 30px;
+        }
+        #home .btn{
+          width: 200px;
+          height: 50px;
+          font-size: 30px;
+        }
+        #about{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #about .sentence1{
+          font-size: 50px;
+        }
+        #about .sentence2{
+          font-size: 50px;
+        }
+        #about img{
+          width: 300px;
+          height: 300px;
+          margin-top: 30px;
+        }
+        #about .paragraph1{
+          font-size: 30px;
+        }
+        #about .paragraph2{
+          font-size: 30px;
+        }
+        #projects{
+          margin-top: 100px;
+        }
+        #projects .card p{
+          font-size: 30px;
+        }
+        #about .paragraph1{
+          font-size: 30px;
+        }
+        #about .paragraph2{
+          font-size: 30px;
+        }
+        #projects{
+          margin-top: 100px;
+        } 
+        #projects .container1{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+        }
+        #experience{
+          margin-top: 100px;
+        }
+        #experience .sentence1{
+          font-size: 50px;
+        }
+        #experience .sentence2{
+          font-size: 50px;
+        }
+        #experience .container2{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+        }
+        #skills{
+          margin-top: 100px;
+        }
+        #skills .sentence1{
+          font-size: 50px;
+        }
+        #skills .sentence2{
+          font-size: 50px;
+        }
+        #skills .container3{
+          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+        }
+        #gallery{
+          margin-top: 100px;
+        }
+        #gallery .sentence1{
+          font-size: 50px;
+        }
+        #gallery .sentence2{
+          font-size: 50px;      
+        }
+        .container4{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .card1{
+          width: 300px;
+          height: 300px;
+        }
+        .card1 img{
+          width: 290px;
+          height: 290px;
+        }
+        #contact{
+          margin-top: 100px;
+        }
+        #contact .sentence1{
+          font-size: 50px;
+        }
+        #contact .sentence2{
+          font-size: 50px;
+        }
+        .container5{
+          max-width: 300px;
+        }
+        .container5 label{
+          font-size: 25px;
+        }
+        .container5 input[type="text"],
+        .container5 input[type="email"],
+        .container5 textarea {
+          font-size: 20px;
+        }
+        .container5 input[type="submit"] {
+          font-size: 20px;
+        }
+      }
+      
     </style>
 </head>
 <body>
@@ -378,7 +532,31 @@
             <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
         </nav>
     </header>
-    
+    <div class="menu-panel" id="menu-panel-id">
+      <button class="close-btn" id="btn-close">&times;</button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+     </ul>
+    </div>
+    <script>
+      const burger = document.getElementById("burger");
+      const menuPanel = document.getElementById("menu-panel-id");
+      const closeBtn = document.getElementById("btn-close");
+
+      burger.addEventListener("click", () => {
+        menuPanel.classList.toggle("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("active");
+      });
+    </script>
     <section id="home">
         <img src="/assets/image/WhatsApp Image 2024-10-21 at 22.49.09.jpeg" alt="my image1">
         <h2>Hey It's me</h2>
@@ -549,15 +727,14 @@
         </form>
       </div>
 
-      <footer>
+      <footer style="align-items: center;">
         <h1 style="color: white;text-align: center;">Follow me on these platforms</h1>
         <div class="icons">
           <a href="https://www.facebook.com/share/84NjY84zEa7xtMGy/?mibextid=qi2Omg"><img src="/assets/image/Facebook (1).jpg" alt="fb logo" style="width: 100px;height: 100px;"></a>
           <a href="https://www.instagram.com/__shanuka19__/profilecard/?igsh=djl5aHEzNDZwNGw3"><img src="/assets/image/instagram app icon (1).jpg" alt="twitter logo" style="width: 100px;height: 100px;"></a>
           <a href="https://github.com/oshanshanuka"><img src="/assets/image/Primer.jpg" alt="github logo" style="width: 100px;height: 100px;"></a>
           <a href="https://www.linkedin.com/in/oshan-shanuka-4947b928b/"><img src="/assets/image/Linkedin icons for free download _ Freepik.jpg" alt="linkedin logo" style="width: 100px;height: 100px;"></a>
-          <a href="https://wa.me/qr/BTJ6AZXRMO23B1"><img src="/assets/image/518934e3-090d-4d35-9841-60ac6c15c247.jpg" alt="twitter logo" style="width: 100px;height: 100px;"></a>
-          <a href="oshanshanuka428@gmail.com`"><img src="/assets/" alt="gmail logo" style="width: 100px;height: 100px;"></a>
+          
       </footer>
     </section>
 </body>
